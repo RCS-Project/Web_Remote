@@ -1,0 +1,85 @@
+/*
+  Web Remote
+  Copyright (c) 2016 Subhajit Das
+
+  This file is part of Web Remote.
+
+  Web Remote is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Web Remote is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+/*
+    Created on : 10 Oct, 2015, 5:04:19 PM
+    Edited on  : 04 Dec, 2015, 4:34:47 PM
+    Author     : Subhajit Das
+    Version    : 0.3
+*/
+
+a {text-decoration: none;}
+
+html, body{
+    height: 100vh !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+/* standard sizes */
+.FullSize{width: 100%;height: 100%;}
+.FullViewSize{width: 100vw;height: 100vh;}
+.FullHeight{height: 100%;}
+.FullWidth{width: 100%;}
+.FullViewHeight{height: 100vh;}
+.FullViewWidth{width: 100vw;}
+
+/* Flexible font sizes */
+/* vh font sizes */
+.vhTinyFont{font-size: 2vh;}
+.vhSmallFont{font-size: 4vh;}
+.vhMidFont{font-size: 6vh;}
+.vhBigFont{font-size: 8vh;}
+.vhLargeFont{font-size: 10vh;}
+
+/* vw font sizes */
+.vwTinyFont{font-size: 2vw;}
+.vwSmallFont{font-size: 4vw;}
+.vwMidFont{font-size: 6vw;}
+.vwBigFont{font-size: 8vw;}
+.vwLargeFont{font-size: 10vw;}
+
+/* vmin font sizes */
+.vminTinyFont{font-size: 2vmin;}
+.vminSmallFont{font-size: 4vmin;}
+.vminMidFont{font-size: 6vmin;}
+.vminBigFont{font-size: 8vmin;}
+.vminLargeFont{font-size: 10vmin;}
+
+/* vmax font sizes */
+.vmaxTinyFont{font-size: 2vmax;}
+.vmaxSmallFont{font-size: 4vmax;}
+.vmaxMidFont{font-size: 6vmax;}
+.vmaxBigFont{font-size: 8vmax;}
+.vmaxLargeFont{font-size: 10vmax;}
+
+/* flexible font sizes */
+.TinyFont{font-size: 2vw;}
+.SmallFont{font-size: 4vw;}
+.MidFont{font-size: 6vw;}
+.BigFont{font-size: 8vw;}
+.LargeFont{font-size: 10vw;}
+
+@media only screen and (orientation: landscape){
+    .TinyFont{font-size: 2vh;}
+    .SmallFont{font-size: 4vh;}
+    .MidFont{font-size: 6vh;}
+    .BigFont{font-size: 8vh;}
+    .LargeFont{font-size: 10vh;}
+}

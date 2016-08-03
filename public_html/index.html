@@ -1,0 +1,127 @@
+<!--
+  Web Remote
+  Copyright (c) 2016 Subhajit Das
+
+  This file is part of Web Remote.
+
+  Web Remote is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Web Remote is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<!DOCTYPE html>
+<!--
+Update : 25/06/16
+-->
+<html>
+    <head>
+        <title>Remote</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="theme-color" content="green">
+        <link type="text/css" rel="stylesheet" href="StyleSheet/w3.css">
+        <link type="text/css" rel="stylesheet" href="StyleSheet/StandardFormatting.css">
+        <link type="text/css" rel="stylesheet" href="StyleSheet/Remote.css">
+        <link rel="icon" href="favicon.png">
+        <link rel="shortcut icon" href="favicon.png">
+        <script src="JS/RemoteScript.js" type="text/javascript"></script>
+        <script src="JS/Host.js" type="text/javascript"></script>
+        <script src="JS/StylingScript.js" type="text/javascript"></script>
+    </head>
+    <body onload="init()">
+        <!-- The About Box -->
+        <div id="aboutBox" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top">
+                <div class="w3-container">
+                    <span class="w3-xxlarge">About</span>
+                    <span id="aboutBoxClose" class="w3-closebtn w3-xxlarge"
+                          onclick="aboutBoxHide()">&times;</span>
+                    <div class="FullWidth w3-border-bottom"></div>
+                    <div class="FullWidth w3-border-bottom w3-large">
+                        <div class="w3-xlarge">Version</div>
+                        <div>1.0</div>
+                    </div>
+                    <div class="FullWidth w3-border-bottom w3-large">
+                        <div class="w3-xlarge">Build</div>
+                        <div>20160627</div>
+                    </div>
+                    <div class="FullWidth w3-border-bottom w3-large">
+                        <div class="w3-xlarge">Developer</div>
+                        <div>SD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- menu navigation -->
+        <div id="menuWrapper" class="w3-top">
+            <div class="w3-green w3-card-2 w3-centered">
+                <img id="menuBtn" src="img/menu.png" alt="&equiv;"  onclick="nav_switch()"/>
+                <nav class="w3-sidenav w3-green w3-card-4 vhMidFont" id="menu" style="display: none;">
+                    <label class="w3-padding-right w3-padding-left">Host : </label><input class="w3-white" type="text" onkeyup="configureHost(this.value)" value="svc.web-remote.tk"/>
+                    <a class="w3-padding-right w3-padding-left" href="download/index.html">Download</a>
+                    <!--<a class="w3-padding-right w3-padding-left" href="config">Configure</a>-->
+                    <a onclick="aboutBoxShow(),nav_close()" class="w3-padding-right w3-padding-left">About</a>
+                </nav>
+            </div>
+        </div>
+
+        <div id="remotePanel" class="FullViewSize" onclick="nav_close()">
+            <!-- Power button -->
+            <input type="button" class="w3-btn-floating w3-right w3-green" id="power" onclick="send('P')" value="P">
+
+            <!-- output panel -->
+            <div id="out" class="w3-white FullWidth">0</div>
+
+            <!-- group of all buttons -->
+            <div id="keyArea" class="FullWidth vhLargeFont">
+                <table id="keypadPortrait" class="FullHeight w3-centered w3-grey">
+                    <tr>
+                        <td id="k1">1</td>
+                        <td id="k2">2</td>
+                        <td id="k3">3</td>
+                    </tr>
+                    <tr>
+                        <td id="k4">4</td>
+                        <td id="k5">5</td>
+                        <td id="k6">6</td>
+                    </tr>
+                    <tr>
+                        <td id="k7">7</td>
+                        <td id="k8">8</td>
+                        <td id="k9">9</td>
+                    </tr>
+                </table>
+                <table id="keypadLandscape" class="FullHeight w3-centered w3-grey w3-hide">
+                    <tr>
+                        <td id="k11">1</td>
+                        <td id="k12">2</td>
+                        <td id="k13">3</td>
+                        <td id="k14">4</td>
+                        <td id="k15">5</td>
+                    </tr>
+                    <tr>
+                        <td id="k16">6</td>
+                        <td id="k17">7</td>
+                        <td id="k18">8</td>
+                        <td id="k19">9</td>
+                        <td></td>
+                    </tr>
+                </table>
+
+                <!-- black keypad mask -->
+                <div id="keypadMask" class="FullWidth w3-center w3-black">
+                    <img id="loadImg" src="img/loading.gif" alt="Loading" class="FullHeight w3-centered"/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
